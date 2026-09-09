@@ -1,0 +1,79 @@
+/* 배경 사진 겹침 처리 (라이브러리 없이 opacity 전환으로 구현) */
+#mainSlide li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+#mainSlide li.on {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* 문구 아래쪽에 그라데이션을 깔아 사진 위에서도 글씨가 잘 보이게 함 */
+.hero_overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 90px 100px;
+  background: linear-gradient(to top, rgba(0, 10, 30, 0.65) 0%, rgba(0, 10, 30, 0.15) 55%, rgba(0, 10, 30, 0) 100%);
+  pointer-events: none;
+}
+
+.hero_overlay_top {
+  color: #fff;
+}
+
+/* 영문 문구와 오른쪽 설명 문구가 같은 높이에 오도록 한 줄로 묶습니다. */
+.hero_overlay_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero_eyebrow {
+  margin: 0 0 14px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 6px;
+}
+
+.hero_title {
+  margin: 0 0 8px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero_title_en {
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #fff;
+}
+
+.hero_overlay_right {
+  color: #fff;
+  font-family: "Noto Sans SC", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.hero_overlay_right p {
+  margin: 0;
+}

@@ -1,0 +1,75 @@
+/* 최상단에서는 투명 헤더 + 흰 글자, 스크롤하면 흰 배경 헤더 + 어두운 글자로 전환합니다.
+   레거시 common.css가 #header에 흰 배경/검정 글자를 기본값으로 깔아두므로 여기서 덮어씁니다. */
+#header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+#header #header-menu .menu,
+#header #header-menu .menu > li > a {
+  color: #fff !important;
+  transition: color 0.25s ease;
+}
+
+/* 메뉴에 마우스를 올리면 하단 파란 밑줄과 같은 색으로 글자색도 바뀝니다. */
+#header #header-menu .menu > li > a:hover {
+  color: #0d71ab !important;
+}
+
+/* 로고 아이콘(육각형)은 자체 배경색이 있어 스크롤 여부와 상관없이 항상 동일합니다. */
+#header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#header .logo_icon {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+/* "평택비전안과의원" 글자만 최상단에서는 흰색, 스크롤 시 검정으로 전환됩니다. */
+#header .logo_wordmark {
+  width: 190px;
+  height: auto;
+  color: #fff;
+  transition: color 0.25s ease;
+}
+
+/* 스크롤 시 */
+#header.header--scrolled {
+  background: rgba(255, 255, 255, 1) !important;
+  border-bottom-color: transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+#header.header--scrolled #header-menu .menu,
+#header.header--scrolled #header-menu .menu > li > a {
+  color: #000 !important;
+}
+
+/* 스크롤 상태에서도 호버 색은 동일하게 파란 밑줄 색을 따릅니다. */
+#header.header--scrolled #header-menu .menu > li > a:hover {
+  color: #0d71ab !important;
+}
+
+#header.header--scrolled .logo_wordmark {
+  color: #000;
+}
+
+/* 모바일 메뉴 토글 버튼도 같은 방식으로 전환되도록 미리 대비해둠 (현재 마크업엔 없음) */
+#header .menu-toggle span i,
+#header .menu-toggle span:before,
+#header .menu-toggle span:after {
+  background: #fff;
+  transition: background-color 0.25s ease;
+}
+
+#header.header--scrolled .menu-toggle span i,
+#header.header--scrolled .menu-toggle span:before,
+#header.header--scrolled .menu-toggle span:after {
+  background: #000;
+}

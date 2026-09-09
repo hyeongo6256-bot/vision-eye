@@ -1,0 +1,16 @@
+/* 레거시 스타일(common.css, main.css 등)이 실제 디자인을 담당하므로
+   여기서는 Vite 기본 템플릿 스타일을 초기화만 해둡니다. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* 한글 문장이 단어(어절) 중간에서 어색하게 줄바꿈되지 않도록 함
+     (예: "처방합니다." 가 "처방합니" / "다." 로 쪼개지는 문제 방지) */
+  word-break: keep-all;
+}
+
+#root {
+  min-height: 100svh;
+}
