@@ -131,7 +131,7 @@ export const clinicTabs = [
   {
     key: "cataract",
     number: 1,
-    navLabel: "노안백내장 클리닉",
+    navLabel: "노안·백내장 클리닉",
     heading: ["노안백내장", "클리닉"],
     description:
       "수술은 케이스가 실력입니다. 평택비전안과는 고객의 눈 상태에 맞춘 맞춤형 수술을 진행합니다.",

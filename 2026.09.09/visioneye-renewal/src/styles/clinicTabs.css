@@ -1,0 +1,160 @@
+#sec2.clinic {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 120px 90px;
+}
+
+/* 제목+목록+사진 묶음을 하나의 폭으로 묶어서, 섹션 안에서 가운데로 오게 함
+   (제목과 목록의 왼쪽 정렬은 이 안에서 그대로 유지됨) */
+.clinic-inner {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.clinic-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.clinic-eyebrow {
+  margin: 4px 0 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #999;
+}
+
+.clinic-heading {
+  margin: 0;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: 6px;
+  color: #0d4682;
+}
+
+.clinic-heading__lower {
+  text-transform: none;
+}
+
+.clinic-body {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  margin-bottom: 60px;
+}
+
+.clinic-list {
+  flex: 0 0 340px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clinic-list__row {
+  border-bottom: 1px solid #eee;
+}
+
+.clinic-list__item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  width: 100%;
+  padding: 22px 0 22px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.clinic-list__bar {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  width: 3px;
+  background: #0d4682;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.clinic-list__item--active .clinic-list__bar {
+  opacity: 1;
+}
+
+.clinic-list__number {
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #bbb;
+  transition: color 0.2s ease;
+}
+
+.clinic-list__label {
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #aaa;
+  transition: color 0.2s ease, font-weight 0.2s ease;
+}
+
+.clinic-list__item--active .clinic-list__number {
+  color: #0d4682;
+}
+
+.clinic-list__item--active .clinic-list__label {
+  color: #111;
+  font-weight: 800;
+}
+
+.clinic-photo {
+  flex: 0 0 460px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clinic-photo img {
+  width: 100%;
+  height: 100%;
+  /* 사진 자체가 이미 원형으로 잘려 있으므로, 잘라내지 않고 그대로 가운데 정렬해서 보여줌 */
+  object-fit: contain;
+  display: block;
+}
+
+.clinic-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.clinic-quote__text {
+  margin: 0;
+  width: 520px;
+  /* 문구 길이가 1~2줄로 바뀌어도 따옴표 위치가 흔들리지 않도록 높이를 고정 */
+  min-height: calc(1.7em * 2);
+  text-align: center;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #0d4682;
+}
+
+.clinic-quote__mark {
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1;
+  color: #0d4682;
+  padding-bottom: 4px;
+}

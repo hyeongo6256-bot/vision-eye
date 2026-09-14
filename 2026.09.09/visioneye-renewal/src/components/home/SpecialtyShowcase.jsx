@@ -57,6 +57,7 @@ function SpecialtyShowcase() {
             transform: `translate(-50%, -50%) translateX(${diff * 150}px) scale(${1 - distance * 0.12})`,
             zIndex: 10 - distance,
             opacity: distance > 2 ? 0 : 1,
+            filter: distance === 0 ? "none" : "blur(3px)",
             pointerEvents: distance > 2 ? "none" : "auto",
           };
           return (

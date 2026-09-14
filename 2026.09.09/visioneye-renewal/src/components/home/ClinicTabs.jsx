@@ -1,58 +1,55 @@
 import { useState } from "react";
 import { clinicTabs } from "../../data/homeContent";
+import "../../styles/clinicTabs.css";
 
 function ClinicTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeTab = clinicTabs[activeIndex];
 
   return (
-    <section id="sec2">
-      <div className="inner">
-        <div className="sec2_con show">
-          <div className="container">
-            <div className="sec2_con_right">
-              <ul>
-                {clinicTabs.map((tab, index) => (
-                  <li key={tab.key} className={index === activeIndex ? "on" : ""}>
-                    <img src={tab.image} alt={tab.navLabel} />
-                  </li>
-                ))}
-              </ul>
-            </div>
+    <section id="sec2" className="clinic">
+      <div className="clinic-inner">
+        <div className="clinic-header">
+          <h2 className="clinic-heading">
+            <span className="clinic-heading__lower">our</span> CLINIC
+          </h2>
+          <p className="clinic-eyebrow">(IN DETAIL)</p>
+        </div>
 
-            <div className="sec2_con_center">
-              <ul>
-                <li className="on" style={{ display: "block" }}>
-                  <p className="sec2_p1">
-                    {activeTab.heading[0]}
-                    <br />
-                    {activeTab.heading[1]}
-                  </p>
-                  <p className="sec2_p2">{activeTab.description}</p>
+        <div className="clinic-body">
+          <ul className="clinic-list">
+            {clinicTabs.map((tab, index) => {
+              const isActive = index === activeIndex;
+              return (
+                <li key={tab.key} className="clinic-list__row">
+                  <button
+                    type="button"
+                    className={`clinic-list__item ${isActive ? "clinic-list__item--active" : ""}`}
+                    onMouseEnter={() => setActiveIndex(index)}
+                    onFocus={() => setActiveIndex(index)}
+                    aria-current={isActive}
+                  >
+                    <span className="clinic-list__bar" aria-hidden="true" />
+                    <span className="clinic-list__number">
+                      ({String(tab.number).padStart(2, "0")})
+                    </span>
+                    <span className="clinic-list__label">{tab.navLabel}</span>
+                  </button>
                 </li>
-              </ul>
-            </div>
+              );
+            })}
+          </ul>
 
-            <div className="sec2_con_left">
-              <ul className="pcv">
-                {clinicTabs.map((tab, index) => (
-                  <li key={tab.key} className={index === activeIndex ? "on" : ""}>
-                    <a
-                      href="#"
-                      onClick={(event) => {
-                        event.preventDefault();
-                        setActiveIndex(index);
-                      }}
-                    >
-                      <em className="aventa">{tab.number}</em>
-                      <p>{tab.navLabel}</p>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="clinic-photo">
+            <img src={activeTab.image} alt={activeTab.navLabel} />
           </div>
         </div>
+      </div>
+
+      <div className="clinic-quote">
+        <span className="clinic-quote__mark">“</span>
+        <p className="clinic-quote__text">{activeTab.description}</p>
+        <span className="clinic-quote__mark">”</span>
       </div>
     </section>
   );
