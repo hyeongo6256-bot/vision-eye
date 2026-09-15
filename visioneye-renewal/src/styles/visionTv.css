@@ -1,0 +1,16 @@
+/* 레거시 main.css의 #sec5 { margin-top: 245px }가 너무 넓어서,
+   위 our CLINIC 섹션(하단 padding 120px)과의 간격을 줄이기 위해 덮어씀 */
+#sec5 {
+  margin-top: 90px;
+}
+
+/* our CLINIC 제목과 동일한 폰트/크기/색상 */
+.vision-tv__heading {
+  margin: 0 0 28px;
+  text-align: center;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #0d4682;
+}

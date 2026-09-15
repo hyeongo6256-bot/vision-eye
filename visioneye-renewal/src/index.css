@@ -9,6 +9,10 @@ body {
   /* 한글 문장이 단어(어절) 중간에서 어색하게 줄바꿈되지 않도록 함
      (예: "처방합니다." 가 "처방합니" / "다." 로 쪼개지는 문제 방지) */
   word-break: keep-all;
+  /* common.css의 body { overflow: hidden }을 되돌림.
+     body에 overflow가 hidden/auto/scroll이면 그 자체가 스크롤 컨테이너로 취급되어
+     하위 요소의 position: sticky가 전혀 동작하지 않게 됨 (Blue Eye Center 섹션이 고정되지 않던 원인) */
+  overflow: visible;
 }
 
 #root {

@@ -1,11 +1,16 @@
 import { visionTv } from "../../data/homeContent";
+import "../../styles/visionTv.css";
 
 function VisionTv() {
   return (
     <section id="sec5">
       <div className="inner">
         <div className="sec5_txt">
-          <p className="sec5_p2 aos-item" data-aos="fade-up" data-aos-duration="1000">
+          <p
+            className="vision-tv__heading aos-item"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             {visionTv.title}
           </p>
         </div>

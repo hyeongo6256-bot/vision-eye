@@ -23,3 +23,7 @@ vision eye 리뉴얼 프로젝트(`visioneye-renewal/`) 작업 기록입니다. 
 - SPECIALITY 제목 폰트를 our CLINIC과 동일하게 맞추고 따옴표 제거
 - 신규 "Blue Eye Center" 섹션 추가: 남색 배경 고정(패럴랙스) + 안경 이미지 히어로 + 진료분야 5개 항목이 좌우 번갈아 배치되는 스크롤 목록
 - **작업 방식 정리**: 매일 프로젝트 전체를 날짜 폴더로 복사하던 방식을 중단하고, 프로젝트를 저장소 최상단 `visioneye-renewal/` 한 곳으로 통합. 이후 날짜 폴더는 만들지 않고, 이 `WORKLOG.md`에 날짜별로 작업 내용만 기록함.
+- Blue Eye Center 스크롤 방식을 여러 차례 시도(연속 이동 애니메이션 → 정적 나열 → sticky 스택) 끝에, 화면 한 자리(sticky stage)에서 안경 배너/진료분야 1~5번 내용이 순서대로 교체되는 방식으로 확정
+- 레거시 `common.css`의 `body { overflow: hidden }`이 `position: sticky`를 무력화시키는 원인이었음을 확인하고 `src/index.css`에서 `overflow: visible`로 되돌려 수정
+- 진료분야 1~5번 카드는 opacity 페이드로 전환되고, 안경 배너는 페이드 없이 스크롤량에 비례해 위로 이동하며 사라지도록 구현
+- 진료분야 카드의 사진/텍스트/폰트 크기를 소폭 확대

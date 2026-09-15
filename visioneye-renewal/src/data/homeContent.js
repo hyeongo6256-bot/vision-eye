@@ -93,7 +93,7 @@ export const treatmentHighlights = [
   {
     key: "cataract",
     image: "/img/main/cont_01_01.jpg",
-    title: "노안/백내장",
+    title: "노안·백내장",
     description: "한치의 오차없이 노안과 백내장을 정확하게 진단하는 첨단 의료장비 시스템",
   },
   {
@@ -123,7 +123,7 @@ export const treatmentHighlights = [
 ];
 
 export const visionTv = {
-  title: "비전 TV",
+  title: "Vision TV",
   youtubeId: "EIudcR28PkU",
 };
 

@@ -1,85 +1,125 @@
-.blue-eye-center {
+/* wrapper 전체 높이만큼 스크롤하는 동안, stage는 화면에 고정되어 있고
+   그 안의 slide들이 opacity만 바뀌며 같은 자리에서 서로 교체됨 */
+.blue-eye-center-wrapper {
   position: relative;
-  /* 단색 배경이지만 background-attachment:fixed가 적용되도록 그라데이션 트릭 사용 */
-  background-image: linear-gradient(#0d4682, #0d4682);
-  background-attachment: fixed;
-  padding: 0 0 100px;
+}
+
+.blue-eye-center-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0d4682;
+}
+
+.blue-eye-center-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.blue-eye-center-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 안경 배너는 페이드 없이 항상 보이고, JS가 스크롤량만큼 transform을 직접 갱신해서
+   위로 이동하며 사라짐 (1~5번 카드는 opacity 페이드만 유지) */
+.blue-eye-center-slide--hero {
+  opacity: 1;
+  pointer-events: auto;
+  transition: none;
+  will-change: transform;
 }
 
 .blue-eye-center__hero-img {
-  display: block;
   width: 100%;
   max-width: 900px;
   height: auto;
-  margin: 0 auto;
-  padding: 60px 0;
+  display: block;
+  /* 배경 위로 붕 떠 보이도록 그림자로 입체감을 줌 (투명 배경 PNG라 안경 모양 그대로 그림자가 생김) */
+  filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.5));
 }
 
-.blue-eye-center__list {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-}
-
-.blue-eye-center__row {
+/* 진료분야 카드 (사진 + 텍스트, 좌우 번갈아 배치) */
+.blue-eye-center__chapter {
   display: flex;
   align-items: center;
-  gap: 50px;
-  padding: 0 40px;
+  justify-content: center;
+  gap: 90px;
 }
 
-.blue-eye-center__row--reverse {
+.blue-eye-center__chapter--reverse {
   flex-direction: row-reverse;
 }
 
-.blue-eye-center__photo {
-  flex: 0 0 340px;
-  aspect-ratio: 4 / 3;
-  border-radius: 14px;
+.blue-eye-center__chapter-photo {
+  flex: 0 0 430px;
+  /* 실제 사진 파일(cont_01_01.jpg)과 같은 세로로 긴 비율 */
+  aspect-ratio: 500 / 580;
+  border-radius: 24px;
   overflow: hidden;
 }
 
-.blue-eye-center__photo img {
+.blue-eye-center__chapter-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.blue-eye-center__text {
-  flex: 1;
+.blue-eye-center__chapter-text {
+  max-width: 460px;
   color: #fff;
 }
 
-.blue-eye-center__row--reverse .blue-eye-center__text {
-  text-align: right;
+.blue-eye-center__chapter-eyebrow {
+  margin: 0 0 12px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 2px;
+  color: #fff;
 }
 
-.blue-eye-center__number {
+.blue-eye-center__chapter-bracket {
+  margin: 0 0 20px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  /* 지원되는 가장 굵은 굵기(800)보다 더 굵어 보이도록 획을 살짝 덧그림 */
+  -webkit-text-stroke: 0.6px currentColor;
+  color: #ffc834;
+}
+
+.blue-eye-center__chapter-question {
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.blue-eye-center__chapter-divider {
   display: block;
-  margin-bottom: 6px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
-  font-weight: 800;
-  font-size: 28px;
-  color: #fff;
+  width: 100px;
+  height: 4px;
+  border-radius: 999px;
+  margin: 28px 0 20px;
+  background: #ffc834;
 }
 
-.blue-eye-center__title {
-  margin: 0 0 10px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  color: #fff;
-}
-
-.blue-eye-center__desc {
+.blue-eye-center__chapter-desc {
   margin: 0;
   font-family: "Noto Sans SC", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
 }
