@@ -10,14 +10,9 @@
   text-align: center;
   font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
   font-weight: 900;
-  font-size: 46px;
+  font-size: 48px;
   letter-spacing: 6px;
   color: #0d4682;
-}
-
-.specialty-grid__quote {
-  display: inline-block;
-  margin: 0 12px;
 }
 
 .specialty-grid__subtitle {

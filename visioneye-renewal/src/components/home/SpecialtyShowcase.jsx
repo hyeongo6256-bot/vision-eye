@@ -26,11 +26,7 @@ function SpecialtyShowcase() {
 
   return (
     <section id="sec1" className="specialty-grid">
-      <h2 className="specialty-grid__heading">
-        <span className="specialty-grid__quote">‘</span>
-        SPECIALITY
-        <span className="specialty-grid__quote">’</span>
-      </h2>
+      <h2 className="specialty-grid__heading">SPECIALITY</h2>
       <p className="specialty-grid__subtitle">
         {specialtySubtitle.map((line, index) => (
           <span key={line}>
