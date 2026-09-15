@@ -1,0 +1,63 @@
+/* 여러 서브페이지에서 공통으로 쓰는 하단 배너(원본 사이트의 /img/page/bottom-common.jpg)를
+   재구성한 섹션. doctor.html, contact.html 등에서 재사용합니다. */
+.doctor-statement {
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.doctor-statement p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.doctor-statement strong {
+  color: #0d4682;
+  font-weight: 800;
+}
+
+.doctor-promo {
+  display: flex;
+  flex-wrap: wrap;
+  background: #0d4682;
+  margin-bottom: 200px;
+}
+
+.doctor-promo__col {
+  flex: 1 1 25%;
+  min-width: 220px;
+  padding: 50px 30px 70px;
+  text-align: center;
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.doctor-promo__col:first-child {
+  border-left: none;
+}
+
+.doctor-promo__col h3 {
+  margin: 0 0 260px;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.doctor-promo__col p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .doctor-promo__col {
+    flex: 1 1 50%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .doctor-promo__col h3 {
+    margin-bottom: 40px;
+  }
+}

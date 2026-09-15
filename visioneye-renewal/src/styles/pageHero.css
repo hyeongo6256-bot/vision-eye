@@ -1,0 +1,74 @@
+/* 서브페이지 공통 히어로: 홈페이지 히어로와 같은 방식(사진 배경 + 하단 그라데이션 + 좌하단 문구)으로,
+   상단 고정 헤더가 투명하게 그 위에 얹히도록 만듭니다. */
+.page-hero {
+  position: relative;
+  /* 서브페이지는 헤더가 투명하지 않고 항상 흰 배경으로 고정되어 있으므로,
+     헤더 높이(102px)만큼 아래로 내려서 사진이 헤더에 가리지 않게 함 */
+  margin-top: 102px;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero--doctor {
+  aspect-ratio: 1920 / 385;
+  background-image: url("/img/page/doctor/top_common.png");
+  /* 이미지 안에 이미 있는 문구(세로 중심이 약 53%)가 늘어난 배너 높이에서도
+     정중앙에 오도록, cover 대신 실제 비율(100% 폭 기준)로 놓고 세로 위치를 계산해서 지정 */
+  background-size: 100% auto;
+  background-position: center 40.6%;
+  background-color: #444448;
+}
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 90px 60px;
+  background: linear-gradient(to top, rgba(0, 10, 30, 0.65) 0%, rgba(0, 10, 30, 0.15) 55%, rgba(0, 10, 30, 0) 100%);
+  color: #fff;
+}
+
+.page-hero__eyebrow {
+  margin: 0 0 14px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+.page-hero__title {
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  letter-spacing: -1px;
+}
+
+/* 배경 사진 안에 이미 있는 문구를 완전히 가리도록 중앙 정렬 + 짙은 단색 오버레이 사용 */
+.page-hero__overlay--center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  background: rgba(3, 12, 30, 0.82);
+}
+
+.page-hero__title--sm {
+  font-size: 34px;
+}
+
+@media (max-width: 768px) {
+  .page-hero__overlay {
+    padding: 0 24px 36px;
+  }
+
+  .page-hero__title {
+    font-size: 32px;
+  }
+
+  .page-hero__title--sm {
+    font-size: 26px;
+  }
+}

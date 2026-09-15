@@ -1,8 +1,12 @@
 import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HomePage from "./pages/HomePage";
+import SystemPage from "./pages/SystemPage";
+import DoctorPage from "./pages/DoctorPage";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   useEffect(() => {
@@ -13,7 +17,12 @@ function App() {
   return (
     <div id="wrapper">
       <Header />
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/system" element={<SystemPage />} />
+        <Route path="/doctor" element={<DoctorPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
   );

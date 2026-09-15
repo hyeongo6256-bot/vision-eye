@@ -1,0 +1,132 @@
+.page-hero--contact {
+  aspect-ratio: 1920 / 289;
+  background-image: url("/img/page/contact/top_common.png");
+}
+
+.contact-page__thanks {
+  margin: 60px 0 0;
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+}
+
+.contact-page__thanks strong {
+  color: #0d4682;
+}
+
+.contact-page__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 50px;
+  background: #eef3f8;
+}
+
+.contact-page__brand-icon {
+  width: 70px;
+  height: 70px;
+}
+
+.contact-page__brand-text {
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  color: #111;
+}
+
+.contact-page__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 40px;
+}
+
+.contact-page__hours h3,
+.contact-page__contact h3 {
+  margin: 0 0 16px;
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: #6b7280;
+  border-radius: 4px;
+}
+
+.contact-page__hours ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-page__hours li {
+  display: flex;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+}
+
+.contact-page__hours li span:first-child {
+  min-width: 64px;
+  font-weight: 600;
+}
+
+.contact-page__hours-note {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #888;
+}
+
+.contact-page__contact {
+  text-align: center;
+}
+
+.contact-page__phone {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.contact-page__address {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.contact-page__map {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+.contact-page__map iframe {
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .contact-page__brand {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .contact-page__brand-text {
+    font-size: 28px;
+  }
+
+  .contact-page__map iframe {
+    height: 320px;
+  }
+}

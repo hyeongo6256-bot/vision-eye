@@ -27,3 +27,8 @@ vision eye 리뉴얼 프로젝트(`visioneye-renewal/`) 작업 기록입니다. 
 - 레거시 `common.css`의 `body { overflow: hidden }`이 `position: sticky`를 무력화시키는 원인이었음을 확인하고 `src/index.css`에서 `overflow: visible`로 되돌려 수정
 - 진료분야 1~5번 카드는 opacity 페이드로 전환되고, 안경 배너는 페이드 없이 스크롤량에 비례해 위로 이동하며 사라지도록 구현
 - 진료분야 카드의 사진/텍스트/폰트 크기를 소폭 확대
+- `react-router-dom` 도입, 서브페이지 라우팅 구조 추가 (`/system`, `/doctor`, `/contact`)
+- 서브페이지 공통 히어로 배너(`page-hero`) 컴포넌트 스타일 추가 — 서브페이지에서는 헤더가 항상 흰 배경으로 고정되도록 `Header`에 라우트 인식 로직 추가
+- "의료진 소개"(`/doctor`) 페이지 구현: 병원명/원형 사진/인용구 + 전문의 약력·학회 목록 2단 레이아웃, 원본 사이트의 서브페이지 공통 하단 배너(`/img/page/bottom-common.jpg`) 내용을 텍스트로 재구성해 추가
+- "오시는 길"(`/contact`) 페이지 구현: 진료안내/연락처/주소 + 원본 사이트의 구글 지도 embed 연결
+- 하단 4단 배너(`doctor-statement`, `doctor-promo`)를 `sitePromo.css`로 분리해 여러 서브페이지에서 재사용 가능하도록 정리
