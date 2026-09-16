@@ -36,9 +36,11 @@ export const doctors = [
   },
 ];
 
+export const doctorStatementHeading = "평택비전안과의원은";
+
 export const doctorStatement = {
   lines: [
-    ["평택비전안과의원은", " 환자의 안전과 수준 높은 의료서비스를 제공하기 위해"],
+    ["", "환자의 안전과 수준 높은 의료서비스를 제공하기 위해"],
     ["꾸준한 연구", "를 멈추지 않습니다."],
   ],
 };
@@ -46,24 +48,28 @@ export const doctorStatement = {
 export const doctorPromoColumns = [
   {
     key: "treatment",
+    photo: "/img/page/doctor/promo_treatment.png",
     title: "앞서가는 진료",
     description:
       "정밀 검사 프로그램과 한번 더 확인하는 꼼꼼한 검진을 통해 환자 맞춤형 수술방법을 제시합니다.",
   },
   {
     key: "safety",
+    photo: "/img/page/doctor/promo_safety.png",
     title: "앞서가는 안전시스템",
     description:
       "대학 병원급 첨단 의료 장비를 도입해 최적의 수술 및 치료 시스템으로 안전성을 높였습니다.",
   },
   {
     key: "staff",
+    photo: "/img/page/doctor/promo_staff.png",
     title: "나아가는 의료진",
     description:
       "경력에 안일하지 않고 더 나은 의료 서비스를 위해 배우고 연구하며 환자분들이 믿고 맡기실 수 있는 의료진이 되겠습니다.",
   },
   {
     key: "service",
+    photo: "/img/page/doctor/promo_service.png",
     title: "앞서가는 서비스",
     description:
       "환자의 입장에서 환자의 안전을 최우선으로 생각하는 공정함과 배려심을 갖춘 의료진이 함께합니다.",

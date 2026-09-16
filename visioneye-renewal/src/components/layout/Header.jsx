@@ -39,7 +39,10 @@ function Header() {
                 <Link to="/" />
               </li>
               {navMenu.map((item) =>
-                item.href === "/system" || item.href === "/doctor" || item.href === "/contact" ? (
+                item.href === "/system" ||
+                item.href === "/doctor" ||
+                item.href === "/contact" ||
+                item.href === "/about" ? (
                   <li key={item.href} className="menu110">
                     <Link to={item.href} className="big-menu">
                       {item.label}

@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import SystemPage from "./pages/SystemPage";
 import DoctorPage from "./pages/DoctorPage";
 import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   useEffect(() => {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/system" element={<SystemPage />} />
         <Route path="/doctor" element={<DoctorPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
     </div>

@@ -10,13 +10,8 @@
 }
 
 .page-hero--doctor {
-  aspect-ratio: 1920 / 385;
+  aspect-ratio: 1920 / 289;
   background-image: url("/img/page/doctor/top_common.png");
-  /* 이미지 안에 이미 있는 문구(세로 중심이 약 53%)가 늘어난 배너 높이에서도
-     정중앙에 오도록, cover 대신 실제 비율(100% 폭 기준)로 놓고 세로 위치를 계산해서 지정 */
-  background-size: 100% auto;
-  background-position: center 40.6%;
-  background-color: #444448;
 }
 
 .page-hero__overlay {

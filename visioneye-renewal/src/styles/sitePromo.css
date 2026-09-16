@@ -1,7 +1,19 @@
 /* 여러 서브페이지에서 공통으로 쓰는 하단 배너(원본 사이트의 /img/page/bottom-common.jpg)를
    재구성한 섹션. doctor.html, contact.html 등에서 재사용합니다. */
+.doctor-promo-heading {
+  padding: 55px 40px;
+  text-align: center;
+}
+
+.doctor-promo-heading h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0d4682;
+}
+
 .doctor-statement {
-  padding: 70px 40px;
+  padding: 50px 40px 70px;
   text-align: center;
 }
 
@@ -19,45 +31,59 @@
 
 .doctor-promo {
   display: flex;
-  flex-wrap: wrap;
-  background: #0d4682;
-  margin-bottom: 200px;
+  gap: 14px;
+  padding: 0 40px 50px;
 }
 
 .doctor-promo__col {
+  position: relative;
   flex: 1 1 25%;
-  min-width: 220px;
-  padding: 50px 30px 70px;
+  min-height: 460px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.doctor-promo__photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.doctor-promo__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px;
   text-align: center;
   color: #fff;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to top, rgba(0, 10, 30, 0.85) 0%, rgba(0, 10, 30, 0.15) 55%, rgba(0, 10, 30, 0) 100%);
 }
 
-.doctor-promo__col:first-child {
-  border-left: none;
-}
-
-.doctor-promo__col h3 {
-  margin: 0 0 260px;
+.doctor-promo__overlay h3 {
+  margin: 0 0 10px;
   font-size: 19px;
   font-weight: 800;
 }
 
-.doctor-promo__col p {
+.doctor-promo__overlay p {
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 900px) {
-  .doctor-promo__col {
-    flex: 1 1 50%;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  .doctor-promo {
+    flex-wrap: wrap;
   }
 
-  .doctor-promo__col h3 {
-    margin-bottom: 40px;
+  .doctor-promo__col {
+    flex: 1 1 50%;
+    min-height: 320px;
   }
 }

@@ -8,38 +8,45 @@ function ContactPage() {
       {/* 원본 사이트와 동일하게, 배너 이미지 자체에 있는 문구를 그대로 사용합니다. */}
       <section className="page-hero page-hero--contact" />
 
-      <p className="contact-page__thanks">
-        <strong>평택 비전안과의원</strong>을 찾아주셔서 감사합니다.
-      </p>
-
-      <div className="contact-page__brand">
-        <img src="/img/common/favicon-visioneye-20260908.svg" alt="" className="contact-page__brand-icon" />
-        <span className="contact-page__brand-text">평택 비전안과의원</span>
-      </div>
-
-      <div className="contact-page__info">
-        <div className="contact-page__hours">
-          <h3>진료안내</h3>
-          <ul>
-            {clinicHours.map((row) => (
-              <li key={row.label}>
-                <span>{row.label}</span>
-                <span>{row.time}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="contact-page__hours-note">{clinicHoursNote}</p>
+      <div className="contact-page__body">
+        <div className="contact-page__brand">
+          <img src="/img/common/favicon-visioneye-20260908.svg" alt="" className="contact-page__brand-icon" />
+          <h2 className="contact-page__brand-name">평택비전안과의원</h2>
+          <p className="contact-page__brand-name-en">PYEONTAEK VISION EYE CLINIC</p>
+          <p className="contact-page__thanks">평택 비전안과의원을 찾아주셔서 감사합니다</p>
         </div>
 
-        <div className="contact-page__contact">
-          <h3>상담문의</h3>
-          <p className="contact-page__phone">{clinicContact.phone}</p>
-          <h3>오시는길</h3>
-          {clinicContact.address.map((line) => (
-            <p key={line} className="contact-page__address">
-              {line}
-            </p>
-          ))}
+        <div className="contact-page__info">
+          <div className="contact-page__block">
+            <span className="contact-page__badge">진료안내</span>
+            <ul className="contact-page__hours">
+              {clinicHours.map((row) => (
+                <li key={row.label}>
+                  <span className="contact-page__hours-label">{row.label}</span>
+                  <span className="contact-page__hours-ampm">AM</span>
+                  <span className="contact-page__hours-time">{row.from}</span>
+                  <span className="contact-page__hours-dash">-</span>
+                  <span className="contact-page__hours-ampm">PM</span>
+                  <span className="contact-page__hours-time">{row.to}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="contact-page__hours-note">{clinicHoursNote}</p>
+          </div>
+
+          <hr className="contact-page__rule" />
+
+          <div className="contact-page__block">
+            <span className="contact-page__badge">상담문의</span>
+            <p className="contact-page__phone">{clinicContact.phone}</p>
+          </div>
+
+          <hr className="contact-page__rule" />
+
+          <div className="contact-page__block">
+            <span className="contact-page__badge">오시는길</span>
+            <p className="contact-page__address">{clinicContact.address}</p>
+          </div>
         </div>
       </div>
 

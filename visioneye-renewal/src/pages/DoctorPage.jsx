@@ -1,4 +1,4 @@
-import { doctors, doctorStatement, doctorPromoColumns } from "../data/doctorContent";
+import { doctors, doctorStatementHeading, doctorStatement, doctorPromoColumns } from "../data/doctorContent";
 import "../styles/pageHero.css";
 import "../styles/doctorPage.css";
 import "../styles/sitePromo.css";
@@ -57,21 +57,28 @@ function DoctorPage() {
 
       <hr className="doctor-page__divider" />
 
-      <section className="doctor-statement">
-        {doctorStatement.lines.map(([bold, rest], i) => (
-          <p key={i}>
-            <strong>{bold}</strong>
-            {rest}
-          </p>
-        ))}
-      </section>
+      <div className="doctor-promo-heading">
+        <h2>{doctorStatementHeading}</h2>
+      </div>
 
       <section className="doctor-promo">
         {doctorPromoColumns.map((col) => (
           <div key={col.key} className="doctor-promo__col">
-            <h3>{col.title}</h3>
-            <p>{col.description}</p>
+            <img className="doctor-promo__photo" src={col.photo} alt="" />
+            <div className="doctor-promo__overlay">
+              <h3>{col.title}</h3>
+              <p>{col.description}</p>
+            </div>
           </div>
+        ))}
+      </section>
+
+      <section className="doctor-statement">
+        {doctorStatement.lines.map(([bold, rest], i) => (
+          <p key={i}>
+            {bold && <strong>{bold}</strong>}
+            {rest}
+          </p>
         ))}
       </section>
     </main>

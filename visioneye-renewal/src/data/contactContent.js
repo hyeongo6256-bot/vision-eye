@@ -1,17 +1,17 @@
 // 오시는 길 페이지 데이터. 원본 사이트(visioneye.co.kr/contact.html)를 그대로 옮긴 것입니다.
 
 export const clinicHours = [
-  { label: "평일", time: "09:00 ~ 18:00" },
-  { label: "수요일", time: "09:00 ~ 12:40" },
-  { label: "토요일", time: "09:00 ~ 13:00" },
-  { label: "점심시간", time: "12:40 ~ 14:00" },
+  { label: "월 | 화 | 목 | 금", from: "09:00", to: "18:00" },
+  { label: "수 요 일", from: "09:00", to: "12:40" },
+  { label: "토 요 일", from: "09:00", to: "13:00" },
+  { label: "점 심 시 간", from: "12:40", to: "14:00" },
 ];
 
-export const clinicHoursNote = "※토요일은 점심시간 없이 진료";
+export const clinicHoursNote = "*토요일은 점심시간 없이 진료";
 
 export const clinicContact = {
   phone: "031)656-2256",
-  address: ["평택시 비전5로 20-26, 3층 314호", "스타벅스 건물 3층"],
+  address: "평택시 비전5로 20-26,3층 314호ㅣ스타벅스 건물 3층",
 };
 
 // 원본 사이트에 그대로 삽입되어 있는 구글 지도 embed 주소

@@ -1,0 +1,10 @@
+.page-hero--about {
+  background-image: url("/img/page/about/hero.jpg");
+}
+
+/* 세로 길이는 풀 스크린으로 채우되, 헤더는 다른 서브페이지처럼 흰 배경으로 고정되므로
+   기본 .page-hero의 margin-top(102px)은 그대로 유지합니다. */
+.page-hero--full {
+  height: 100vh;
+  aspect-ratio: auto;
+}
