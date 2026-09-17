@@ -1,5 +1,5 @@
 .page-hero--about {
-  background-image: url("/img/page/about/hero.jpg");
+  background-image: url("/img/page/about/hero.png");
 }
 
 /* 세로 길이는 풀 스크린으로 채우되, 헤더는 다른 서브페이지처럼 흰 배경으로 고정되므로
@@ -7,4 +7,253 @@
 .page-hero--full {
   height: 100vh;
   aspect-ratio: auto;
+}
+
+/* 참고 이미지처럼: 사진 전체를 살짝 어둡게 깐 뒤, 문구를 오른쪽 정렬로 세로 중앙에 배치 */
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 26px;
+  /* 사람이 펜으로 가리키는 모니터 쪽으로 문구를 조금 더 왼쪽으로 옮김 */
+  padding: 0 13% 0 40px;
+  text-align: right;
+  background: rgba(10, 20, 35, 0.32);
+}
+
+.about-hero__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 84px;
+  line-height: 1.05;
+  letter-spacing: 4px;
+  color: #fff;
+}
+
+.about-hero__greeting {
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.about-hero__greeting-en {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 90px 40px;
+}
+
+.about-intro__lead {
+  margin: 0 0 26px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #111;
+}
+
+.about-intro__lead span,
+.about-intro__body span {
+  display: block;
+}
+
+.about-intro__body {
+  margin: 0 0 40px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+}
+
+.about-intro__promise {
+  margin: 0 0 40px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #111;
+}
+
+.about-intro__promise span:first-child {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.about-intro__signature {
+  margin: 0;
+  text-align: left;
+  font-size: 15px;
+  color: #555;
+}
+
+.about-intro__signature strong {
+  margin-left: 12px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* 하단 원형 다이어그램: 배경 사진 위에 원 5개(모서리 4개 + 중앙 1개)와 연결선을 CSS로 그림 */
+.about-promise {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("/img/page/about/promise-bg.png") center / cover no-repeat;
+}
+
+.about-promise__circle {
+  position: absolute;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.about-promise__circle--top-left,
+.about-promise__circle--top-right,
+.about-promise__circle--bottom-left,
+.about-promise__circle--bottom-right {
+  width: 15%;
+}
+
+.about-promise__circle--center {
+  width: 19%;
+}
+
+.about-promise__circle--top-left {
+  left: 21%;
+  top: 24%;
+  transform: translate(-50%, -50%);
+}
+
+.about-promise__circle--top-right {
+  left: 79%;
+  top: 24%;
+  transform: translate(-50%, -50%);
+}
+
+.about-promise__circle--bottom-left {
+  left: 21%;
+  top: 76%;
+  transform: translate(-50%, -50%);
+}
+
+.about-promise__circle--bottom-right {
+  left: 79%;
+  top: 76%;
+  transform: translate(-50%, -50%);
+}
+
+.about-promise__circle--center {
+  left: 50%;
+  top: 51%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.about-promise__lead {
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+}
+
+.about-promise__highlight {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: #ffc834;
+}
+
+.about-promise__circle--center .about-promise__lead {
+  font-size: 20px;
+}
+
+.about-promise__circle--center .about-promise__highlight {
+  font-size: 30px;
+}
+
+.about-promise__connectors {
+  position: absolute;
+  inset: 0;
+}
+
+.about-promise__line {
+  position: absolute;
+  width: 4%;
+  height: 3px;
+  background: #fff;
+}
+
+/* 중앙 원과 모서리 원 사이 중간 지점에, 두 원을 잇는 각도로 짧은 선을 배치 */
+.about-promise__line--tl {
+  left: 35.5%;
+  top: 37.5%;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+.about-promise__line--tr {
+  left: 64.5%;
+  top: 37.5%;
+  transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.about-promise__line--bl {
+  left: 35.5%;
+  top: 63.5%;
+  transform: translate(-50%, -50%) rotate(-35deg);
+}
+
+.about-promise__line--br {
+  left: 64.5%;
+  top: 63.5%;
+  transform: translate(-50%, -50%) rotate(35deg);
+}
+
+@media (max-width: 700px) {
+  .about-promise__lead {
+    font-size: 10px;
+  }
+
+  .about-promise__highlight {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-hero__overlay {
+    padding: 0 30px;
+    gap: 16px;
+  }
+
+  .about-hero__brand {
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+
+  .about-hero__greeting {
+    font-size: 19px;
+  }
+
+  .about-hero__greeting-en {
+    font-size: 13px;
+  }
 }
