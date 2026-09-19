@@ -9,6 +9,12 @@
   background-position: center;
 }
 
+/* 홈페이지 히어로처럼 풀 스크린(뷰포트 전체 높이)으로 채움 */
+.page-hero--full {
+  height: 100vh;
+  aspect-ratio: auto;
+}
+
 .page-hero--doctor {
   aspect-ratio: 1920 / 289;
   background-image: url("/img/page/doctor/top_common.png");
@@ -52,6 +58,15 @@
 
 .page-hero__title--sm {
   font-size: 34px;
+}
+
+/* 배경 사진에 별도 문구가 없는 경우: 중앙 정렬 + 사진이 살아있는 정도의 은은한 어둡기만 사용 */
+.page-hero__overlay--center-light {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  background: rgba(5, 10, 20, 0.4);
 }
 
 @media (max-width: 768px) {

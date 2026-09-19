@@ -1,32 +1,247 @@
-.system-page__placeholder {
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 160px 40px;
+.page-hero--system {
+  background-image: url("/img/page/system/parallax-bg.png");
+  background-position: center 55%;
+  /* 스크롤해도 배경 사진은 제자리에 고정되어, 아래 내용이 그 위로 지나가는 입체감을 줌 */
+  background-attachment: fixed;
 }
 
-.system-page__eyebrow {
-  margin: 0 0 12px;
+.system-hero {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 60px;
+  color: #fff;
+  background: rgba(5, 10, 20, 0.32);
+}
+
+.system-hero__row {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.system-hero__brand {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 2px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 84px;
+  line-height: 1.05;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.system-hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+  padding-left: 40px;
+}
+
+.system-hero__title {
+  margin: 0;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+}
+
+.system-hero__subtitle {
+  margin: 2px 0 22px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.system-hero__heading {
+  margin: 0 0 16px;
   font-family: "SUIT", "Noto Sans SC", sans-serif;
   font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 2px;
+  font-size: 36px;
+}
+
+.system-hero__desc {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.system-hero__desc span {
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .system-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 0 24px;
+  }
+
+  .system-hero__brand {
+    align-items: center;
+    text-align: center;
+    white-space: normal;
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+
+  .system-hero__info {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    padding-left: 0;
+    padding-top: 24px;
+  }
+}
+
+/* 원본 사이트의 장비 목록(4열 x 3행)을 실제 사진 12장 + 텍스트로 재구성.
+   히어로와 같은 사진을 같은 위치로 고정해서, 두 섹션이 하나로 이어진 배경 위에 있는 것처럼 보이게 함 */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
+  gap: 50px 60px;
+  margin: 0 auto;
+  padding: 90px 40px;
+}
+
+.equipment-grid__photo {
+  aspect-ratio: 320 / 372;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  padding: 14px;
+  background: #fff;
+}
+
+.equipment-grid__photo img {
+  width: 100%;
+  height: 100%;
+  /* 제품 전체가 프레임 안에 들어오도록 자르지 않고, 남는 부분은 흰 배경으로 채움 */
+  object-fit: contain;
+  display: block;
+}
+
+.equipment-grid__name {
+  margin: 0;
+  text-align: center;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #111;
+}
+
+.equipment-grid__name span {
+  margin-left: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .equipment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 20px;
+    padding: 60px 24px;
+  }
+}
+
+/* 논문/브로슈어 기반 장비 상세 소개 2개를 우리 사이트 톤(남색 카드 + 골드 포인트)에 맞춰 재구성 */
+.equipment-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px 100px;
+}
+
+.equipment-detail__card {
+  display: flex;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0d4682;
+}
+
+.equipment-detail__photo {
+  flex: 0 0 42%;
+}
+
+.equipment-detail__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.equipment-detail__body {
+  flex: 1;
+  padding: 44px 44px;
+  color: #fff;
+}
+
+.equipment-detail__tagline {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
   color: #ffc834;
 }
 
-.system-page__title {
-  margin: 0 0 16px;
-  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
-  font-weight: 900;
-  font-size: 40px;
-  color: #0d4682;
+.equipment-detail__name {
+  margin: 0 0 20px;
+  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-weight: 800;
+  font-size: 26px;
 }
 
-.system-page__desc {
+.equipment-detail__points {
   margin: 0;
-  font-size: 16px;
-  color: #666;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.equipment-detail__points li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.equipment-detail__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffc834;
+}
+
+@media (max-width: 900px) {
+  .equipment-detail__card {
+    flex-direction: column;
+  }
+
+  .equipment-detail__photo {
+    flex: none;
+    aspect-ratio: 16 / 10;
+  }
+
+  .equipment-detail__body {
+    padding: 30px 26px;
+  }
 }
