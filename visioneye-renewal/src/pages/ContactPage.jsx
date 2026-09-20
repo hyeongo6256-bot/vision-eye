@@ -5,7 +5,7 @@ import "../styles/contactPage.css";
 function ContactPage() {
   return (
     <main id="container" className="contact-page">
-      {/* 원본 사이트와 동일하게, 배너 이미지 자체에 있는 문구를 그대로 사용합니다. */}
+      {/* 의료진 소개 배너와 동일하게, 문구를 이미지 자체에 합성해두었습니다 (좌우/상하 모두 픽셀 단위로 중앙 정렬). */}
       <section className="page-hero page-hero--contact" />
 
       <div className="contact-page__body">

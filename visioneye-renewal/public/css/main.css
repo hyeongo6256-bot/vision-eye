@@ -407,7 +407,7 @@
 #sec1 .swiper-slide-1 .sec1_txt2::before {
     content: '(단일의사기준)';
     display: block;
-    font-family: 'Noto Sans SC';
+    font-family: 'Pretendard', 'Noto Sans SC';
     font-size: 17px;
     font-weight: 400;
     position: absolute;
@@ -1345,7 +1345,7 @@
 
 .swiper-pagination-fraction {
     font-weight: 300;
-    font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+    font-family: 'Pretendard', sans-serif;
 }
 
 .controls-wrap .swiper-pagination-current {
@@ -1410,7 +1410,7 @@
 }
 
 .controls-wrap .swiper-pagination-fraction {
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     top: -2px;
     width: auto;
     font-size: 15px;

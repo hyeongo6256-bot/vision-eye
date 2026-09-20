@@ -8,6 +8,7 @@ import SystemPage from "./pages/SystemPage";
 import DoctorPage from "./pages/DoctorPage";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import PayPage from "./pages/PayPage";
 
 function App() {
   const { pathname } = useLocation();
@@ -26,8 +27,9 @@ function App() {
         <Route path="/doctor" element={<DoctorPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/pay" element={<PayPage />} />
       </Routes>
-      {pathname !== "/system" && <Footer />}
+      {pathname !== "/pay" && <Footer />}
     </div>
   );
 }

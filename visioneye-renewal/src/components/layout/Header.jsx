@@ -42,7 +42,8 @@ function Header() {
                 item.href === "/system" ||
                 item.href === "/doctor" ||
                 item.href === "/contact" ||
-                item.href === "/about" ? (
+                item.href === "/about" ||
+                item.href === "/pay" ? (
                   <li key={item.href} className="menu110">
                     <Link to={item.href} className="big-menu">
                       {item.label}

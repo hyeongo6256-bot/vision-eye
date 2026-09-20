@@ -18,7 +18,7 @@
 .specialty-grid__subtitle {
   margin: 0 0 50px;
   text-align: center;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 500;
   font-size: 17px;
   line-height: 1.7;
@@ -105,7 +105,7 @@
 
 .specialty-detail__title {
   margin: 0 0 12px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 26px;
   color: #0d4682;
@@ -113,7 +113,7 @@
 
 .specialty-detail__tagline {
   margin: 0 0 16px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 17px;
   color: #111;

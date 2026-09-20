@@ -21,7 +21,7 @@
 
 .clinic-eyebrow {
   margin: 4px 0 0;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 2px;
@@ -88,7 +88,7 @@
 }
 
 .clinic-list__number {
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: #bbb;
@@ -96,7 +96,7 @@
 }
 
 .clinic-list__label {
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 600;
   font-size: 20px;
   color: #aaa;
@@ -143,7 +143,7 @@
   /* 문구 길이가 1~2줄로 바뀌어도 따옴표 위치가 흔들리지 않도록 높이를 고정 */
   min-height: calc(1.7em * 2);
   text-align: center;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.7;

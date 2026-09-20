@@ -1,6 +1,10 @@
+/* 의료진 소개 배너(top_common.png)와 동일하게, 문구가 이미지 안에 합성되어 있어
+   별도 HTML 텍스트/오버레이가 필요 없습니다. (Pillow로 배경 사진 위에 직접 합성,
+   가로/세로 모두 0.5px 오차 내로 중앙 정렬) */
 .page-hero--contact {
   aspect-ratio: 1920 / 289;
-  background-image: url("/img/page/contact/top_common.png");
+  background-image: url("/img/page/contact/hero.png");
+  background-position: center;
 }
 
 .contact-page__body {

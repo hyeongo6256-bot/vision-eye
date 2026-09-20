@@ -82,7 +82,7 @@ body {
     min-height: 100%;
     font-size: 13px;
     background: #fff;
-    font-family: "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    font-family: "Pretendard", "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
     color: #2a2a2a;
     letter-spacing: -0.5px;
     word-wrap: break-word;
@@ -145,7 +145,7 @@ select,
 textarea,
 button {
     vertical-align: middle;
-    font-family: "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif
+    font-family: "Pretendard", "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif
 }
 
 select option {
@@ -352,7 +352,7 @@ body .placeholder {
 }
 
 .aventa {
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     letter-spacing: 0;
 }
 
@@ -1486,7 +1486,7 @@ body .placeholder {
 .top_right input::placeholder {
     font-size: 16px;
     color: #fff;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
 }
 
 .top_right textarea {
@@ -1501,7 +1501,7 @@ body .placeholder {
 .top_right textarea::placeholder {
     font-size: 16px;
     color: #fff;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
 }
 
 .top_right .checkbox {
@@ -2702,14 +2702,14 @@ select.ed {
     padding-left: 15px;
     margin-right: 5px;
     font-weight: 900;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
 }
 
 .right_slide .swiper-pagination span::after {
     content: '0';
     display: block;
     font-size: 18px;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     font-weight: 900;
     position: absolute;
     top: 0;
@@ -4702,7 +4702,7 @@ select.ed {
 .s0201_p2::before {
     content: 'case';
     display: block;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     letter-spacing: 0;
     font-size: 100px;
     font-weight: 900;
@@ -7378,7 +7378,7 @@ select.ed {
     width: 44px;
     height: 44px;
     background: #0d71ab;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     font-size: 20px;
     font-weight: 900;
     color: #fff;
@@ -7393,7 +7393,7 @@ select.ed {
     width: 44px;
     height: 44px;
     background: #0d71ab;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     font-size: 20px;
     font-weight: 900;
     color: #fff;
@@ -7408,7 +7408,7 @@ select.ed {
     width: 44px;
     height: 44px;
     background: #0d71ab;
-    font-family: "Aventa";
+    font-family: "Pretendard", sans-serif;
     font-size: 20px;
     font-weight: 900;
     color: #fff;
@@ -9811,7 +9811,7 @@ select.ed {
 }
 
 .quick_db select {
-    font-family: "Noto Sans SC";
+    font-family: "Pretendard", "Noto Sans SC";
     padding-left: 5px;
     font-size: 16px;
     color: #666;

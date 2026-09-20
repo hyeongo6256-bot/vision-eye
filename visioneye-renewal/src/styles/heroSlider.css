@@ -41,7 +41,7 @@
 
 .hero_eyebrow {
   margin: 0 0 14px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 6px;
@@ -49,7 +49,7 @@
 
 .hero_title {
   margin: 0 0 8px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 64px;
   line-height: 1;
@@ -58,7 +58,7 @@
 
 .hero_title_en {
   margin: 0;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 3px;

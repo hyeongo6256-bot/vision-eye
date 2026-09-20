@@ -1,0 +1,228 @@
+/* 비급여 항목 페이지. 제공받은 다크 테마 리스트 디자인(사진 히어로 + 스택형 카드)의 값을 옮겼습니다. */
+.pay-page {
+  position: relative;
+  color: #fff;
+  /* 서브페이지는 헤더가 항상 흰 배경으로 고정되어 있으므로, 헤더 높이(102px)만큼 아래로 내림 */
+  margin-top: 102px;
+  /* 이미지 로딩 전/카드 사이 여백에 잠깐 보일 수 있는 배경색(사진과 같은 톤) */
+  background: #1c3a63;
+}
+
+/* 집 사진을 뷰포트 전체에 고정 배경으로 깔아, 스크롤해서 카드가 겹쳐 지나가도
+   중간에 평평한 남색 배경이 끊기지 않고 사진이 페이지 끝까지 계속 보이게 함.
+   background-attachment:fixed 대신 position:fixed 레이어를 써서 모바일 사파리에서도 동작함 */
+.pay-page__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: 50% 56%;
+}
+
+.pay-page__backdrop-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(32, 69, 126, 0.55) 0%, rgba(32, 69, 126, 0) 45%, rgba(18, 43, 88, 0.4) 100%);
+}
+
+.pay-page__hero {
+  position: relative;
+  z-index: 1;
+  height: 640px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* 아래 카드(.pay-page__body)와 같은 max-width/좌우 padding을 써서 텍스트 왼쪽 끝이 카드 모서리와 정확히 맞도록 함 */
+  padding: 88px 60px 0;
+}
+
+.pay-page__head {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pay-page__eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f6ca55;
+}
+
+.pay-page__title {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(10, 30, 70, 0.35);
+}
+
+.pay-page__title span {
+  display: block;
+}
+
+.pay-page__note {
+  margin: 0;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(10, 30, 70, 0.4);
+}
+
+.pay-page__body {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px 96px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-page__section {
+  position: relative;
+  margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  column-gap: 48px;
+  padding: 56px;
+  border-radius: 28px;
+  background: rgba(18, 43, 88, 0.84);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 32px 80px rgba(5, 18, 42, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+.pay-page__section-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 6px;
+}
+
+.pay-page__section-index {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #f6ca55;
+}
+
+.pay-page__section-heading {
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.pay-page__section-en {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c3d3ea;
+}
+
+.pay-page__section-count {
+  font-size: 14px;
+  color: #c3d3ea;
+}
+
+.pay-page__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid #fff;
+}
+
+.pay-page__list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-sizing: border-box;
+  min-height: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.pay-page__item-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.pay-page__spacer {
+  flex-grow: 1;
+}
+
+.pay-page__item-unit {
+  font-size: 14px;
+  color: #c3d3ea;
+  white-space: nowrap;
+}
+
+.pay-page__item-price {
+  min-width: 150px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f6ca55;
+  font-variant-numeric: tabular-nums;
+}
+
+.pay-page__item-price--free {
+  color: #fff;
+}
+
+.pay-page__footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 16px;
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(10, 30, 70, 0.4);
+}
+
+@media (max-width: 900px) {
+  .pay-page__hero {
+    height: 420px;
+    padding: 56px 20px 0;
+  }
+
+  .pay-page__title {
+    font-size: 36px;
+  }
+
+  .pay-page__note {
+    font-size: 15px;
+  }
+
+  .pay-page__body {
+    padding: 0 20px 64px;
+  }
+
+  .pay-page__section {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    padding: 32px 24px;
+    margin-bottom: 24px;
+    border-radius: 20px;
+  }
+
+  .pay-page__list li {
+    flex-wrap: wrap;
+    row-gap: 4px;
+    min-height: auto;
+    padding: 14px 0;
+  }
+
+  .pay-page__item-price {
+    min-width: 0;
+  }
+}

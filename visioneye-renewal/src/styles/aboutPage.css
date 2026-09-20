@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 2px;
   margin: 0;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 84px;
   line-height: 1.05;
@@ -32,7 +32,7 @@
 
 .about-hero__greeting {
   margin: 0;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.5;

@@ -1,6 +1,8 @@
 import { equipmentList, equipmentDetails } from "../data/systemContent";
+import { doctorStatementHeading, doctorStatement, doctorPromoColumns } from "../data/doctorContent";
 import "../styles/pageHero.css";
 import "../styles/systemPage.css";
+import "../styles/sitePromo.css";
 
 function SystemPage() {
   return (
@@ -47,19 +49,80 @@ function SystemPage() {
       <section className="equipment-detail">
         {equipmentDetails.map((item) => (
           <article key={item.key} className="equipment-detail__card">
-            <div className="equipment-detail__photo">
-              <img src={item.photo} alt={item.name} />
-            </div>
-            <div className="equipment-detail__body">
-              <p className="equipment-detail__tagline">{item.tagline}</p>
-              <h3 className="equipment-detail__name">{item.name}</h3>
-              <ul className="equipment-detail__points">
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
+            <div className="equipment-detail__row">
+              <div className="equipment-detail__photo">
+                <img src={item.photo} alt={item.name} />
+              </div>
+              <div className="equipment-detail__body">
+                <p className="equipment-detail__tagline">{item.tagline}</p>
+                <h3 className="equipment-detail__name">{item.name}</h3>
+                <ul className="equipment-detail__points">
+                  {item.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+
+                {item.sections?.map((section) => (
+                  <div key={section.heading} className="equipment-detail__section">
+                    <h4>{section.heading}</h4>
+                    <ul className="equipment-detail__points">
+                      {section.items.map((line) => (
+                        <li key={line}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+
+                {item.note && (
+                  <div className="equipment-detail__note">
+                    <h4>{item.note.heading}</h4>
+                    <p>{item.note.body}</p>
+                  </div>
+                )}
+
+                {item.tags && (
+                  <ul className="equipment-detail__tags">
+                    {item.tags.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
+
+            {item.brochureImage && (
+              <figure className="equipment-detail__brochure">
+                <img src={item.brochureImage} alt={`${item.name} 원본 자료`} />
+              </figure>
+            )}
           </article>
+        ))}
+      </section>
+
+      {/* 원본 사이트(system.html)와 동일하게, 장비 소개 다음에는 다른 서브페이지와 공통인
+          하단 배너(진료/안전시스템/의료진/서비스)로 마무리합니다. */}
+      <div className="doctor-promo-heading">
+        <h2>{doctorStatementHeading}</h2>
+      </div>
+
+      <section className="doctor-promo">
+        {doctorPromoColumns.map((col) => (
+          <div key={col.key} className="doctor-promo__col">
+            <img className="doctor-promo__photo" src={col.photo} alt="" />
+            <div className="doctor-promo__overlay">
+              <h3>{col.title}</h3>
+              <p>{col.description}</p>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section className="doctor-statement">
+        {doctorStatement.lines.map(([bold, rest], i) => (
+          <p key={i}>
+            {bold && <strong>{bold}</strong>}
+            {rest}
+          </p>
         ))}
       </section>
     </main>

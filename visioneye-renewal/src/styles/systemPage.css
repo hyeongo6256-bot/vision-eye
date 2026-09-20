@@ -29,7 +29,7 @@
   align-items: flex-end;
   text-align: right;
   gap: 2px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 84px;
   line-height: 1.05;
@@ -47,7 +47,7 @@
 
 .system-hero__title {
   margin: 0;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 40px;
 }
@@ -62,7 +62,7 @@
 
 .system-hero__heading {
   margin: 0 0 16px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 36px;
 }
@@ -133,7 +133,7 @@
 .equipment-grid__name {
   margin: 0;
   text-align: center;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: #111;
@@ -165,10 +165,13 @@
 }
 
 .equipment-detail__card {
-  display: flex;
   border-radius: 16px;
   overflow: hidden;
   background: #0d4682;
+}
+
+.equipment-detail__row {
+  display: flex;
 }
 
 .equipment-detail__photo {
@@ -198,7 +201,7 @@
 
 .equipment-detail__name {
   margin: 0 0 20px;
-  font-family: "SUIT", "Noto Sans SC", sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 800;
   font-size: 26px;
 }
@@ -231,8 +234,67 @@
   background: #ffc834;
 }
 
+.equipment-detail__section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.equipment-detail__section h4,
+.equipment-detail__note h4 {
+  margin: 0 0 12px;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffc834;
+}
+
+.equipment-detail__note {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.equipment-detail__note p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.equipment-detail__tags {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.equipment-detail__tags li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+  color: #fff;
+}
+
+/* 원본 브로슈어/화면 캡처 원본 이미지를 카드 하단에 참고 자료로 첨부 */
+.equipment-detail__brochure {
+  margin: 0;
+  padding: 28px;
+  background: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.equipment-detail__brochure img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
 @media (max-width: 900px) {
-  .equipment-detail__card {
+  .equipment-detail__row {
     flex-direction: column;
   }
 
@@ -243,5 +305,9 @@
 
   .equipment-detail__body {
     padding: 30px 26px;
+  }
+
+  .equipment-detail__brochure {
+    padding: 20px;
   }
 }
