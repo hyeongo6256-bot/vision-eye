@@ -18,6 +18,12 @@ function App() {
     AOS.init();
   }, []);
 
+  useEffect(() => {
+    // React Router는 일반 링크 이동과 달리 페이지를 이동해도 스크롤 위치를 그대로 유지하므로,
+    // 메뉴로 다른 페이지에 넘어갈 때마다 스크롤을 맨 위로 되돌립니다.
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div id="wrapper">
       <Header />

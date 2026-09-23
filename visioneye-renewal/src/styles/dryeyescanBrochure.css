@@ -1,0 +1,95 @@
+/* 사용자가 제작한 Dry Eye Scan 브로슈어(스크롤 기반 '북' 형태 프레젠테이션, dryeyescan-brochure.html)의 CSS.
+   --des-top 은 사이트 공용 고정 헤더 높이(102px)로 맞췄습니다. */
+/* Dry Eye Scan 브로슈어 (평택비전안과 진료시스템 페이지)
+   --des-top : 사이트 고정 헤더 높이 (스크롤 상태 103px) */
+.des{--des-top:102px;--deep:#1d4b8f;--indigo:#3b51a3;--sky:#6ab3e0;--slate:#667385;--mist:#eef4fa;--ink:#26303c;--mute:#5f6b78;--meibo:#c0d9ed;
+  font-family:Pretendard,'Noto Sans KR',sans-serif;color:var(--ink);line-height:1.6;word-break:keep-all;max-width:1200px;margin:0 auto;overflow-x:clip}
+.des *{box-sizing:border-box;margin:0;padding:0}
+.des .en{font-family:'Montserrat',Pretendard,sans-serif;letter-spacing:.04em}
+
+/* ===== BOOK / STAGE ===== */
+.des .book{position:relative}
+.des .stage{position:sticky;top:var(--des-top);height:calc(100vh - var(--des-top));overflow:hidden;background:#fff}
+.des .pg{position:absolute;inset:0;display:flex;flex-direction:column;background:#fff;
+  opacity:0;visibility:hidden;transform:translateY(48px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s linear .7s}
+.des .pg.on{opacity:1;visibility:visible;transform:none;transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.des .pg.past{transform:translateY(-48px) scale(.98)}
+.des .pg .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.des .pg.on .rv{opacity:1;transform:none}
+.des .pg.on .rv:nth-child(2){transition-delay:.1s}.des .pg.on .rv:nth-child(3){transition-delay:.2s}.des .pg.on .rv:nth-child(4){transition-delay:.3s}
+
+/* nav */
+.des .prog{position:absolute;left:0;top:0;height:3px;background:var(--sky);z-index:5;transition:width .5s ease}
+.des .dots{position:absolute;right:22px;top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:12px}
+.des .dots button{width:10px;height:10px;border-radius:50%;border:1.5px solid #9fb0c4;background:transparent;cursor:pointer;padding:0;transition:all .3s}
+.des .dots button.on{background:var(--deep);border-color:var(--deep);transform:scale(1.25)}
+.des .count{position:absolute;right:26px;bottom:20px;z-index:5;font-size:12px;color:var(--mute);letter-spacing:.12em;transition:opacity .4s}
+.des .count b{color:var(--deep);font-weight:600}
+.des .hint{position:absolute;left:64px;bottom:calc(clamp(14px,2.4vh,24px)*2 + 58px);transform:translateX(-50%);z-index:5;font-size:11px;color:var(--mute);letter-spacing:.2em;display:flex;flex-direction:column;align-items:center;gap:4px;transition:opacity .4s}
+.des .hint{transform:none}
+.des .hint i{width:1px;height:22px;background:#9fb0c4;animation:desHint 1.6s infinite}
+@keyframes desHint{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* page parts */
+.des .head{background:var(--indigo);color:#fff;padding:clamp(18px,3.2vh,32px) 64px}
+.des .head .no{font-size:12px;letter-spacing:.2em;opacity:.8}
+.des .head h2{font-size:clamp(22px,3.6vh,30px);font-weight:700;line-height:1.3;margin-top:2px}
+.des .head p{font-size:clamp(13px,1.9vh,15.5px);opacity:.9;margin-top:4px}
+.des .body{flex:1;min-height:0;padding:clamp(20px,4vh,44px) 64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+
+/* P1 cover */
+.des .cover-main{flex:1;min-height:0;display:grid;grid-template-columns:.78fr 1.22fr;align-items:center;gap:24px;padding:0 0 0 64px}
+.des .tag{font-size:clamp(18px,3vh,26px);font-weight:700;color:var(--deep);line-height:1.4}
+.des .logo{display:block;width:min(100%,420px);height:auto;margin:clamp(14px,3vh,28px) 0}
+.des .lead{font-size:clamp(15px,2.3vh,18px);color:var(--indigo);font-weight:500;font-style:italic;line-height:1.7}
+.des .lead b{font-weight:700}
+.des .cover-img{height:100%;position:relative;overflow:hidden;margin-right:40px}
+.des .cover-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%);mask-image:linear-gradient(90deg,transparent 0,#000 10%)}
+.des .stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(--deep);color:#fff}
+.des .stat{padding:clamp(14px,2.4vh,24px) 18px;text-align:center;border-right:1px solid rgba(255,255,255,.14)}
+.des .stat:last-child{border:0}
+.des .stat .v{font-family:'Montserrat',Pretendard,sans-serif;font-size:clamp(18px,3vh,24px);font-weight:600;line-height:1.3}
+.des .stat .l{font-size:12.5px;color:#bcd0e6}
+
+/* P2 diagnostics */
+.des .p2 .body{grid-template-columns:1.5fr 1fr;gap:40px}
+.des .shot{border-radius:14px;overflow:hidden;background:#667385;padding:clamp(8px,1.4vh,14px);box-shadow:0 14px 34px rgba(29,75,143,.16)}
+.des .shot img{display:block;width:100%;height:auto;max-height:60vh;object-fit:contain;border-radius:6px}
+.des .checks{list-style:none;display:grid;gap:clamp(8px,1.5vh,14px)}
+.des .checks li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:clamp(14px,2.1vh,16.5px);font-weight:500;color:var(--ink);line-height:1.45}
+.des .checks li small{display:block;font-size:.84em;font-weight:400;color:var(--mute)}
+.des .checks svg{width:22px;height:22px;margin-top:1px}
+
+/* P3 benefits */
+.des .p3 .body{grid-template-columns:.9fr 1.1fr}
+.des .eyebrow{font-size:12px;font-weight:600;color:var(--sky);letter-spacing:.2em;margin-bottom:8px}
+.des h3.title{font-size:clamp(22px,3.6vh,30px);font-weight:700;color:var(--deep);line-height:1.35}
+.des .meibo{margin-top:clamp(16px,3vh,28px);background:var(--meibo);border-radius:14px;padding:10px}
+.des .meibo img{display:block;width:100%;max-height:26vh;object-fit:contain}
+.des .meibo figcaption{font-size:12.5px;color:var(--deep);text-align:center;margin-top:4px}
+.des .benefits{display:grid;gap:clamp(10px,1.8vh,16px)}
+.des .ben{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;background:var(--mist);border-radius:14px;padding:clamp(14px,2.4vh,22px) 22px}
+.des .ben .n{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--indigo);display:grid;place-items:center;font-family:'Montserrat',sans-serif;font-weight:600;font-size:17px;box-shadow:0 2px 8px rgba(59,81,163,.12)}
+.des .ben p{font-size:clamp(14px,2.1vh,16.5px);color:var(--ink);font-weight:500}
+
+/* P4 dry eye */
+.des .p4 .body{grid-template-columns:1.05fr 1fr}
+.des .txt p{font-size:clamp(14px,2.05vh,16px);color:var(--ink);line-height:1.8}
+.des .txt p + p{margin-top:clamp(10px,2vh,18px)}
+.des .txt .warn{color:var(--deep);font-weight:600}
+.des .sym-t{font-size:clamp(15px,2.2vh,17px);font-weight:700;color:var(--deep);margin-bottom:12px}
+.des .sym{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.des .sym span{background:var(--slate);color:#fff;border-radius:10px;padding:clamp(12px,2.2vh,20px) 10px;text-align:center;font-size:clamp(14px,2.1vh,16px);font-weight:500;
+  transform:scale(.92);opacity:0;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.des .pg.on .sym span{transform:none;opacity:1}
+.des .pg.on .sym span:nth-child(2){transition-delay:.05s}.des .pg.on .sym span:nth-child(3){transition-delay:.1s}.des .pg.on .sym span:nth-child(4){transition-delay:.15s}.des .pg.on .sym span:nth-child(5){transition-delay:.2s}.des .pg.on .sym span:nth-child(6){transition-delay:.25s}.des .pg.on .sym span:nth-child(7){transition-delay:.3s}.des .pg.on .sym span:nth-child(8){transition-delay:.35s}.des .pg.on .sym span:nth-child(9){transition-delay:.4s}
+.des .note{margin-top:14px;font-size:13px;color:var(--mute)}
+
+/* ===== 화면 높이가 아주 낮을 때(560px 이하): 일반 스크롤로 전환 ===== */
+.des.flat .stage{position:relative;height:auto;overflow:visible;top:0}
+.des.flat .pg{position:relative;opacity:1;visibility:visible;transform:none;transition:none}
+.des.flat .pg .rv,.des.flat .sym span{opacity:1;transform:none}
+.des.flat .cover-main{min-height:520px}
+.des.flat .dots,.des.flat .count,.des.flat .hint,.des.flat .prog{display:none}
+@media (prefers-reduced-motion:reduce){.des .pg,.des .pg .rv,.des .sym span{transition:none!important}.des .hint i{animation:none}}

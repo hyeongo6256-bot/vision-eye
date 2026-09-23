@@ -1,8 +1,12 @@
-import { equipmentList, equipmentDetails } from "../data/systemContent";
+import { equipmentList } from "../data/systemContent";
 import { doctorStatementHeading, doctorStatement, doctorPromoColumns } from "../data/doctorContent";
+import LightMedBrochure from "../components/system/LightMedBrochure";
+import DryEyeScanBrochure from "../components/system/DryEyeScanBrochure";
 import "../styles/pageHero.css";
 import "../styles/systemPage.css";
 import "../styles/sitePromo.css";
+import "../styles/lightmedBrochure.css";
+import "../styles/dryeyescanBrochure.css";
 
 function SystemPage() {
   return (
@@ -46,58 +50,9 @@ function SystemPage() {
         ))}
       </section>
 
-      <section className="equipment-detail">
-        {equipmentDetails.map((item) => (
-          <article key={item.key} className="equipment-detail__card">
-            <div className="equipment-detail__row">
-              <div className="equipment-detail__photo">
-                <img src={item.photo} alt={item.name} />
-              </div>
-              <div className="equipment-detail__body">
-                <p className="equipment-detail__tagline">{item.tagline}</p>
-                <h3 className="equipment-detail__name">{item.name}</h3>
-                <ul className="equipment-detail__points">
-                  {item.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
+      <LightMedBrochure />
 
-                {item.sections?.map((section) => (
-                  <div key={section.heading} className="equipment-detail__section">
-                    <h4>{section.heading}</h4>
-                    <ul className="equipment-detail__points">
-                      {section.items.map((line) => (
-                        <li key={line}>{line}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-
-                {item.note && (
-                  <div className="equipment-detail__note">
-                    <h4>{item.note.heading}</h4>
-                    <p>{item.note.body}</p>
-                  </div>
-                )}
-
-                {item.tags && (
-                  <ul className="equipment-detail__tags">
-                    {item.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-
-            {item.brochureImage && (
-              <figure className="equipment-detail__brochure">
-                <img src={item.brochureImage} alt={`${item.name} 원본 자료`} />
-              </figure>
-            )}
-          </article>
-        ))}
-      </section>
+      <DryEyeScanBrochure />
 
       {/* 원본 사이트(system.html)와 동일하게, 장비 소개 다음에는 다른 서브페이지와 공통인
           하단 배너(진료/안전시스템/의료진/서비스)로 마무리합니다. */}
